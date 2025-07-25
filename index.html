@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Business Calculator</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Theme Toggle -->
+  <label class="theme-toggle">
+    <input type="checkbox" id="theme-switch" />
+    Dark Mode
+  </label>
+
+  <div class="calculator">
+    <div class="calculator-display">
+      <h1 id="display">0</h1>
+    </div>
+
+    <div class="calculator-buttons">
+      <button class="operator" value="+">+</button>
+      <button class="operator" value="-">−</button>
+      <button class="operator" value="*">×</button>
+
+      <button class="operator" value="/">÷</button>
+      <button class="decimal" value=".">.</button>
+      <button class="clear" id="clear-btn">C</button>
+
+      <button value="7">7</button>
+      <button value="8">8</button>
+      <button value="9">9</button>
+
+      <button value="4">4</button>
+      <button value="5">5</button>
+      <button value="6">6</button>
+
+      <button value="1">1</button>
+      <button value="2">2</button>
+      <button value="3">3</button>
+
+      <button class="zero" value="0">0</button>
+      <button class="operator equal-sign" value="=">=</button>
+    </div>
+
+    <div class="calculator-history">
+      <h2>History</h2>
+      <ul id="history-list"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker Registered'));
+    }
+  </script>
+</body>
+</html>
